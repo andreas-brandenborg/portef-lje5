@@ -9,21 +9,39 @@
         body {
             height: 100%;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: red;
         }
 
-
-
         div.container {
-            display: flex;
             background-color: darkred;
             border: darkred;
             opacity: 0.8;
             box-shadow: 5px 5px 10px darkred;
-            margin: auto;
-            width: 50%;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+        div.uName{
+        display:flex;
             justify-content: center;
-            align-content: flex-end;
+
+        }
+
+        div.passW{
+        display:flex;
+        justify-content: center;
+
+}
+
+        div.loginCreate{
+            display: flex;
+            justify-content: center;
+
         }
 
 
@@ -40,13 +58,27 @@
     </div>
 
     <div class="container">
+
+        <div class="uName">
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Email" name="uname" required>
+        </div>
 
+        <div class="passW">
         <label ><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
+        </div>
 
+
+        <!-- ret href til opret page senere  -->
+        <div class="loginCreate">
         <button type="submit">Login</button>
+            <a href="https://localhost:8080">
+            <button type="button" id="createU">Opret</button>
+            </a>
+        </div>
+
+
 
     </div>
 
