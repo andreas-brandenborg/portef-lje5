@@ -4,18 +4,109 @@
     <meta charset="UTF-8">
     <title>Opret bruger</title>
 
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+        }
 
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      background-color: red;
-    }
+        div.container {
+            background-color: darkred;
+            border: darkred;
+            opacity: 0.8;
+            box-shadow: 5px 5px 10px darkred;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+        div.uName{
+            display:flex;
+            justify-content: center;
+
+        }
+
+        div.passW{
+            display:flex;
+            justify-content: center;
+
+        }
+
+        div.Create{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        div.realName{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        div.schoolName{
+              display: flex;
+              justify-content: center;
+
+          }
+
+
+
+
     </style>
+
 
 </head>
 <body>
+
+
+<form action="action_page.php" method="post">
+    <div class="imgcontainer">
+    </div>
+
+    <div class="container">
+
+        <div class="uName">
+            <label><b>Mail</b></label>
+            <input type="text" placeholder="Skriv din email" name="uname" required>
+        </div>
+
+        <div class="passW">
+            <label ><b>Kode</b></label>
+            <input type="password" placeholder="Skriv dit password" name="psw" required>
+        </div>
+
+        <div class="realName">
+            <label ><b>Navn</b></label>
+            <input type="text" placeholder="Skriv dit navn" name="psw" required>
+        </div>
+
+        <div class="schoolName">
+            <label ><b>Skole</b></label>
+            <input type="text" placeholder="Skriv navnet på din skole" name="psw" required>
+        </div>
+
+
+        <!-- ret href til opret page senere  -->
+        <div class="Create">
+            <a href="https://localhost:8080">
+                <button type="button" id="createU">Opret bruger</button>
+            </a>
+        </div>
+
+
+
+    </div>
+
+
+</form>
+
 
 </body>
 </html>
