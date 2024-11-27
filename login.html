@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background-color: red;
+        }
+
+
+
+        div.container {
+            display: flex;
+            background-color: darkred;
+            border: darkred;
+            opacity: 0.8;
+            box-shadow: 5px 5px 10px darkred;
+            margin: auto;
+            width: 50%;
+            justify-content: center;
+            align-content: flex-end;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+<form action="action_page.php" method="post">
+    <div class="imgcontainer">
+    </div>
+
+    <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Email" name="uname" required>
+
+        <label ><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+
+    </div>
+
+
+</form>
+
+
+</body>
+</html>
