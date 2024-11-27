@@ -1,4 +1,4 @@
-const cafes = [
+const cafes = {Sheet1: [
     { name: 'Paludan Bog & Café', lat: 55.680363, lng: 12.573263, size: 3, price: 2, wifi: 1, student_discount: 1, music: 1 },
     { name: 'Bevars', lat: 55.6835, lng: 12.5775, size: 2, price: 2, wifi: 1, student_discount: 0, music: 1 },
     { name: 'Café Retro', lat: 55.6785, lng: 12.5735, size: 2, price: 1, wifi: 1, student_discount: 0, music: 1 },
@@ -49,4 +49,4 @@ const cafes = [
     { name: 'Café Viking', lat: 55.6785, lng: 12.5735, size: 1, price: 2, wifi: 1, student_discount: 0, music: 1 },
     { name: 'Café Wilder', lat: 55.6785, lng: 12.5735, size: 2, price: 2, wifi: 1, student_discount: 0, music: 1 },
     { name: 'Café Ørsted', lat: 55.6785, lng: 12.5735, size: 2, price: 2, wifi: 1, student_discount: 0, music: 1 }
-];
+]};
