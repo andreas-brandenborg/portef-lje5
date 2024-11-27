@@ -71,7 +71,17 @@
             opacity: 0.7;
         }
 
-
+        #filter {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        label {
+            padding: 5px;
+        }
+        input {
+            padding-left: 5px;
+        }
 
         /* Tekstbox til højre*/
 
@@ -92,19 +102,25 @@
             margin: auto;
             width: 50%;
         }
-
-
-
+        #login{
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
 
     </style>
 </head>
 <body>-
 
-<div class="background">
+<div id="top">
+    <div id="login">
+       <a href="login.html"><button>Login</button></a>
+    </div>
     <div class="transbox">
         <p>Studievenlige Cafeer i København</p>
     </div>
-    <div>
+</div>
+    <div id="filter">
         <label for="størrelse">Vælg størrelse:</label>
         <select name="cars" id="størrelse">
             <option value="1">Lille</option>
@@ -124,9 +140,11 @@
         <label for="music">Musik</label>
         <input type="checkbox" id="music" name="music" value="1">
     </div>
+<div id="bottom">
+    <div id="map"></div>
+    <div></div>
 </div>
 
-<div id="map"></div>
 <script src="locations.js"></script>
 <script src="main.js"></script>
 
