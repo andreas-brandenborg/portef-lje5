@@ -24,5 +24,13 @@ cafesArray.forEach(function(sighting) {
     L.marker([lat, lng]).addTo(map).bindPopup(`<b>${sighting.name}</b> <br> Størrelse:${sighting.size} <br> Pris:${sighting.price} <br> Wifi:${sighting.wifi} <br> Studierabat:${sighting.student_discount} <br> Musik:${sighting.music}`);
 });
 
+fetch("http://localhost:3000/")
+    .then(response => response.json())
+    .then(Cafe_copenhagenData => {
+        console.log(Cafe_copenhagenData)
+    })
+
+
+
 console.log("Map initialized");
 
