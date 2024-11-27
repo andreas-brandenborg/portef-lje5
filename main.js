@@ -19,10 +19,21 @@ cafesArray.forEach(function(sighting) {
     const wifi=sighting.wifi;
     const discount=sighting.student_discount;
     const music=sighting.music
-    console.log(sighting, lat, lng);
-
     L.marker([lat, lng]).addTo(map).bindPopup(`<b>${sighting.name}</b> <br> Størrelse:${sighting.size} <br> Pris:${sighting.price} <br> Wifi:${sighting.wifi} <br> Studierabat:${sighting.student_discount} <br> Musik:${sighting.music}`);
 });
 
-console.log("Map initialized");
+fetch("http://localhost:3000/")
+    .then(response => response.json())
+    .then(Cafe_copenhagenData => {
+        const outPutElement = document.querySelector("#output")
+        outPutElement.innerHTML = ""
+        for(let i=0; i < Cafe_copenhagenData.length; i++){
+            const cafe = Cafe_copenhagenData[i];
+            const li = document.createElement("li")
+            li.innerText = `${cafe.name}, ${cafe.size}, ${cafe.price}`
+            outPutElement.appendChild(li)
+        }
+    })
+
+conso le.log("Map initialized");
 

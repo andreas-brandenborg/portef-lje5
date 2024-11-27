@@ -15,14 +15,13 @@ const connection = mysql.createConnection({
     database: "cafe_copenhagen"
 });
 
+
 //localhost:4000/
-app.get('/all',(req,res)=>{
-    const queryParameter = req.query.type;
-    const q = "SELECT * FROM cafe_copenhagen";
-    connection.query(q, (error, results)=>{
+app.get('/',(req, res) =>{
+    connection.query('SELECT * FROM cafeer',(error, results) =>{
         res.send(results);
-    })
-});
+    } )
+})
 
 
 
