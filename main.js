@@ -1,9 +1,5 @@
 console.log("SkyNet initiated")
 
-
-
-
-
 const cafesArray= cafes.Sheet1;
 const latlng = [];
 
