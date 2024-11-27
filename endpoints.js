@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
 //localhost:4000/
 app.get('/all',(req,res)=>{
     const queryParameter = req.query.type;
-    const q = "SELECT * FROM pokemon";
+    const q = "SELECT * FROM cafe_copenhagen";
     connection.query(q, (error, results)=>{
         res.send(results);
     })
