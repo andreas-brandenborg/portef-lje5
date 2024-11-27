@@ -15,7 +15,6 @@ const connection = mysql.createConnection({
     database: "cafe_copenhagen"
 });
 
-const størrelse =
 
 //localhost:4000/
 app.get('/',(req, res) =>{
