@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Title</title>
     <link
+            rel="stylesheet" type="text/css" href="style.css"
             rel="shortcut icon"
             type="image/x-icon"
             href="docs/images/favicon.ico"
     />
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
@@ -18,97 +18,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
-
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            background-color: red;
-        }
-        .leaflet-container {
-            height: 400px;
-            width: 600px;
-            max-width: 100%;
-            max-height: 100%;
-            border: 3px solid darkred;
-            padding: 10px;
-            box-shadow: 20px 20px 10px darkred;
-        }
-    </style>
-
-    <style>
-        #map {
-            height: 500px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-
-        }
-        .info {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
-        .legend {
-            text-align: center;
-            line-height: 18px;
-            color: #555;
-        }
-        .legend i {
-            width: 18px;
-            height: 18px;
-            float: left;
-            margin-right: 8px;
-            opacity: 0.7;
-        }
-
-        #filter {
-            display: flex;
-            justify-content: center;
-            padding-bottom: 20px;
-        }
-        label {
-            padding: 5px;
-        }
-        input {
-            padding-left: 5px;
-        }
-
-        /* Tekstbox til højre*/
-
-        div.transbox {
-            background-color: darkred;
-            border: darkred;
-            opacity: 0.8;
-            box-shadow: 5px 5px 10px darkred;
-            margin: 30px auto;
-        }
-
-        div.transbox p {
-            font-weight: bold;
-            font-size: 50px;
-            color: #000000;
-            font-family: "Bell MT",serif;
-            display: block;
-            margin: auto;
-            width: 50%;
-        }
-        #login{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 10px;
-        }
-
-    </style>
 </head>
 <body>-
 
@@ -144,7 +53,6 @@
     <div id="map"></div>
     <div></div>
 </div>
-
 <script src="locations.js"></script>
 <script src="main.js"></script>
 
