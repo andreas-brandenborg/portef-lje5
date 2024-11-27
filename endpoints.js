@@ -9,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 const connection = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password: process.env.psw,
-    database:"cafe_copenhagen"
+    host: "localhost",
+    user: "root",
+    password: process.env.DBPASSWORD,
+    database: "cafe_copenhagen"
 });
 
 //localhost:4000/
@@ -32,4 +32,8 @@ app.post('/new',(req,res)=>{
     connection.query(q, (error, results)=>{
         res.send(results);
     })
+});
+
+app.listen(port, () =>{
+    console.log(`Application is now running on port ${port}`);
 });
