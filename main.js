@@ -16,7 +16,7 @@ cafesArray.forEach(function(sighting) {
     const lng = sighting.lng;
     console.log(sighting, lat, lng);
 
-    L.marker([lat, lng]).addTo(map).bindPopup(`<b>${sighting.name}</b>`);
+    L.marker([lat, lng]).addTo(map).bindPopup(`<b>${sighting.name}</b> <br> Størrelse: <br> Pris: <br> Wifi: <br> Studierabat: <br> Musik:`);
 });
 
 console.log("Map initialized");
