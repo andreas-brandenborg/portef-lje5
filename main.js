@@ -73,3 +73,27 @@ searchElement.addEventListener("click", () => {
             console.error("Fetch error:", error);
         });
 })
+
+
+let usersLogin = false
+
+
+const usernameElement = document.querySelector("#username")
+const passwordElement = document.querySelector("#password")
+const loginElement = document.querySelector("#login")
+
+const loginCheck = () => {
+    fetch(`http://localhost:3000/test/:${usernameElement.value}/:${passwordElement.value}`)
+        .then(response => response.json())
+        .then(userData => {
+            const user = usernameElement.value
+            const psw = passwordElement.value
+            if(user === userData[0].email && psw === userData[0].password) {
+                return console.log("HEY ALLE SAMMEN ")
+            }
+
+
+        })
+}
+
+loginElement.addEventListener("click", loginCheck)
