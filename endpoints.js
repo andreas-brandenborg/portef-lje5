@@ -16,13 +16,24 @@ const connection = mysql.createConnection({
 });
 
 
-//localhost:4000/
+
 app.get('/filter/:size/:price/:wifi/:discount/:music',(req, res) =>{
     connection.query(`SELECT * FROM cafeer WHERE size = ${req.params.size} AND price = ${req.params.price} AND wifi = ${req.params.wifi} AND student_discount = ${req.params.discount} AND music = ${req.params.music}`,(error, results) =>{
         res.send(results);
     } )
 })
 
+
+app.get('/test/:email/:password', (req, res) => {
+    const email = req.params.email;
+    const password = req.params.password;
+
+    connection.query(
+        `SELECT * FROM users WHERE email = ? AND password = ?`,
+        [email, password],
+        (error, results) => {
+        res.send(results);})
+})
 
 
 
