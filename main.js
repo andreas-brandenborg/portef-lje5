@@ -25,8 +25,8 @@ function resetMap() {
 const sizeElement = document.querySelector("#størrelse");
 const priceElement = document.querySelector("#pris");
 const wifiElement = document.querySelector("#wifi");
-const studentElement = document.querySelector("#discount");
-const musicElement = document.querySelector("#music");
+const studentElement = document.querySelector("#studierabat");
+const musicElement = document.querySelector("#musik");
 const searchElement = document.querySelector("#search");
 
 searchElement.addEventListener("click", () => {
@@ -35,20 +35,19 @@ searchElement.addEventListener("click", () => {
     const wifi = wifiElement.value
     const student = studentElement.value
     const music = musicElement.value
-    console.log(size)
-    console.log(price)
-    console.log(wifi)
-    console.log(student)
-    console.log(music)
     fetch(`http://localhost:3000/filter/${size}/${price}/${wifi}/${student}/${music}`)
         .then(response => response.json())
         .then(Cafe_copenhagenData => {
             console.log(Cafe_copenhagenData)
             const outPutElement = document.querySelector("#output");
-            outPutElement.textContent = "";
-            cafesArray = Cafe_copenhagenData; // Assign the fetched data to cafesArray
 
+            //Resets OutputElement and Map
+            outPutElement.textContent = "";
             resetMap()
+
+            // Assign the fetched data to cafesArray
+            cafesArray = Cafe_copenhagenData;
+
             // Loop through the cafesArray and add markers to the map
             cafesArray.forEach(function(sighting) {
                 const lat = sighting.lat;
@@ -59,7 +58,7 @@ searchElement.addEventListener("click", () => {
                 const discount = sighting.student_discount;
                 const music = sighting.music;
 
-                // Create a list item for each cafe
+                // Creates li element for each cafe
                 const li = document.createElement("li");
                 li.textContent = `${sighting.name}, ${size}, ${price}`;
                 outPutElement.appendChild(li);
