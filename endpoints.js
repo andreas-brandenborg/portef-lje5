@@ -15,24 +15,10 @@ const connection = mysql.createConnection({
     database: "cafe_copenhagen"
 });
 
-const sizeElement = document.querySelector("#størrelse");
-const priceElement = document.querySelector("#pris");
-const wifiElement = document.querySelector("#wifi");
-const studentElement = document.querySelector("#discount");
-const musicElement = document.querySelector("#music");
-const searchElement = document.querySelector("#search");
-
-searchElement.addEventListener("click", () => {
-    const size = sizeElement.value;
-    const price = priceElement.value;
-    const wifi = wifiElement.checked ? 1 : 0; // Convert checkbox to boolean value
-    const studentDiscount = studentElement.checked ? 1 : 0;
-    const music = musicElement.checked ? 1 : 0;
-})
 
 //localhost:4000/
-app.get('/',(req, res) =>{
-    connection.query('SELECT * FROM cafeer WHERE size',(error, results) =>{
+app.get('/filter/:size/:price/:wifi/:discount/:music',(req, res) =>{
+    connection.query(`SELECT * FROM cafeer WHERE size = ${req.params.size} AND price = ${req.params.price} AND wifi = ${req.params.wifi} AND student_discount = ${req.params.discount} AND music = ${req.params.music}`,(error, results) =>{
         res.send(results);
     } )
 })
