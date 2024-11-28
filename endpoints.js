@@ -15,17 +15,27 @@ const connection = mysql.createConnection({
     database: "cafe_copenhagen"
 });
 
+const sizeElement = document.querySelector("#størrelse");
+const priceElement = document.querySelector("#pris");
+const wifiElement = document.querySelector("#wifi");
+const studentElement = document.querySelector("#discount");
+const musicElement = document.querySelector("#music");
+const searchElement = document.querySelector("#search");
+
+searchElement.addEventListener("click", () => {
+    const size = sizeElement.value;
+    const price = priceElement.value;
+    const wifi = wifiElement.checked ? 1 : 0; // Convert checkbox to boolean value
+    const studentDiscount = studentElement.checked ? 1 : 0;
+    const music = musicElement.checked ? 1 : 0;
+})
 
 //localhost:4000/
 app.get('/',(req, res) =>{
-    connection.query('SELECT * FROM cafeer',(error, results) =>{
+    connection.query('SELECT * FROM cafeer WHERE size',(error, results) =>{
         res.send(results);
     } )
 })
-
-
-
-
 
 
 //localhost:3000/new
