@@ -35,6 +35,7 @@ searchElement.addEventListener("click", () => {
     const wifi = wifiElement.value
     const student = studentElement.value
     const music = musicElement.value
+
     fetch(`http://localhost:3000/filter/${size}/${price}/${wifi}/${student}/${music}`)
         .then(response => response.json())
         .then(Cafe_copenhagenData => {

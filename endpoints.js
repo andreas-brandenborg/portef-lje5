@@ -24,6 +24,8 @@ app.get('/filter/:size/:price/:wifi/:discount/:music',(req, res) =>{
 })
 
 
+
+
 //localhost:3000/new
 app.post('/new',(req,res)=>{
     const name = req.body.name;
