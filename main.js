@@ -28,6 +28,12 @@ const wifiElement = document.querySelector("#wifi");
 const studentElement = document.querySelector("#studierabat");
 const musicElement = document.querySelector("#musik");
 const searchElement = document.querySelector("#search");
+const createUserElement = document.querySelector("#createU")
+const createEmailElement = document.querySelector(".uName")
+const createPasswordElement = document.querySelector(".passW")
+const createNameElement = document.querySelector(".realName")
+const createSchoolElement = document.querySelector(".schoolName")
+
 
 searchElement.addEventListener("click", () => {
     const size = sizeElement.value
@@ -95,5 +101,36 @@ const loginCheck = () => {
 
         })
 }
+
+
+
+createUserElement.addEventListener("click", () => {
+    const email = createEmailElement.value
+    const password = createPasswordElement.value
+    const name = createNameElement.value
+    const school = createSchoolElement.value
+        fetch(`http://localhost:3000/newUser`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email: email,
+            password: password,
+            name: name,
+            school: school
+        })
+    })
+            .then(response => response.json())
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Failed to create user. Please try again.");
+            })
+
+
+})
+
+
+
 
 loginElement.addEventListener("click", loginCheck)

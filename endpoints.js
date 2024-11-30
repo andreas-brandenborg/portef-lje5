@@ -38,14 +38,14 @@ app.get('/test/:email/:password', (req, res) => {
 
 
 //localhost:3000/new
-app.post('/new',(req,res)=>{
-    const name = req.body.name;
-    const primary = req.body.primary;
-    const q = `insert into pokemon (name, primary_type) values("${name}", "${primary}");`;
-    connection.query(q, (error, results)=>{
+app.post('/newUser', (req, res) => {
+    const { email, name, password, school } = req.body;
+    const query = `INSERT INTO users (email, name, password, school) VALUES (?, ?, ?, ?)`;
+    connection.query(query, [email, name, password, school], (error, results) => {
         res.send(results);
-    })
+    });
 });
+
 
 app.listen(port, () =>{
     console.log(`Application is now running on port ${port}`);
