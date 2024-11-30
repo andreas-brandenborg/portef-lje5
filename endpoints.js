@@ -23,25 +23,14 @@ app.get('/filter/:size/:price/:wifi/:discount/:music',(req, res) =>{
     } )
 })
 
-
-app.get('/test/:email/:password', (req, res) => {
-    const email = req.params.email;
-    const password = req.params.password;
-
-    connection.query(
-        `SELECT * FROM users WHERE email = ? AND password = ?`,
-        [email, password],
-        (error, results) => {
-        res.send(results);})
-})
-
-
-
 //localhost:3000/new
 app.post('/newUser', (req, res) => {
-    const { email, name, password, school } = req.body;
-    const query = `INSERT INTO users (email, name, password, school) VALUES (?, ?, ?, ?)`;
-    connection.query(query, [email, name, password, school], (error, results) => {
+    const email = req.body.email
+    const name = req.body.name
+    const password = req.body.password
+    const school = req.body.school
+    const query = `INSERT INTO users (email, name, password, school) VALUES ("${email}", "${name}", "${password}", "${school}")`;
+    connection.query(query, (error, results) => {
         res.send(results);
     });
 });
