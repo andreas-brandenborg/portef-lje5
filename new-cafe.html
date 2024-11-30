@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret café</title>
+
+</head>
+<body>
+
+<div class="imgcontainer">
+</div>
+
+<div class="container">
+
+    <div class="cafeName">
+        <label><b>Café navn</b></label>
+        <input id="cafeName" type="text" placeholder="Skriv navnet på din cafe" name="cafeName" required>
+    </div>
+    <div id="choosePrice">
+        <label for="pris">Vælg pris kategori:</label>
+        <select name="pris" id="pris">
+            <option value="1">$</option>
+            <option value="2">$$</option>
+            <option value="3">$$$</option>
+        </select>
+    </div>
+    <div id="cafeStørrelseDiv">
+        <label for="cafeStørrelse">Vælg café størrelse:</label>
+        <select name="cafeStørrelse" id="cafeStørrelse">
+            <option value="1">Lille</option>
+            <option value="2">Mellem</option>
+            <option value="3">Stor</option>
+        </select>
+    </div>
+    <div id="wifiDiv">
+        <label for="cafeWifi">Wifi:</label>
+        <select name="cafeWifi" id="cafeWifi">
+            <option value="1">Ja</option>
+            <option value="0">Nej</option>
+        </select>
+    </div>
+    <div id="discountCreateDiv">
+        <label for="cafeDiscountCreate">Café med studierabat:</label>
+        <select name="cafeDiscountCreate" id="cafeDiscountCreate">
+            <option value="1">Ja</option>
+            <option value="0">Nej</option>
+        </select>
+    </div>
+
+</div>
+
+<button id="createCafé">Opret Café</button>
+
+<script src=newCafe.js></script>
+</body>
+</html>

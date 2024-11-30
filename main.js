@@ -5,7 +5,6 @@ const latlng = [];
 
 // Initialize the map
 let map = L.map('map').setView([55.67, 12.58], 12);
-
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -14,6 +13,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Function to reset the map er chatGTP
 function resetMap() {
     // Clear all layers from the map
+
     map.eachLayer(function (layer) {
         if (layer instanceof L.TileLayer) {
             return; // Keep the tile layer
@@ -28,9 +28,6 @@ const wifiElement = document.querySelector("#wifi");
 const studentElement = document.querySelector("#studierabat");
 const musicElement = document.querySelector("#musik");
 const searchElement = document.querySelector("#search");
-
-
-
 
 
 searchElement.addEventListener("click", () => {
@@ -77,3 +74,4 @@ searchElement.addEventListener("click", () => {
             console.error("Fetch error:", error);
         });
 })
+

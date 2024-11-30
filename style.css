@@ -83,3 +83,7 @@ div.transbox p {
     padding-right: 10px;
 }
 
+#ny-cafe {
+    display: flex;
+    justify-content: center;
+}

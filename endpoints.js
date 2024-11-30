@@ -23,6 +23,7 @@ app.get('/filter/:size/:price/:wifi/:discount/:music',(req, res) =>{
     } )
 })
 
+
 //localhost:3000/new
 app.post('/newUser', (req, res) => {
     const email = req.body.email
@@ -35,7 +36,20 @@ app.post('/newUser', (req, res) => {
     });
 });
 
-
-app.listen(port, () =>{
-    console.log(`Application is now running on port ${port}`);
+//localhost:3000/newCafe
+app.post('/newCafe', (req, res) => {
+    const name = req.body.name
+    const price = req.body.price
+    const size = req.body.size
+    const wifi = req.body.wifi
+    const student_discount = req.body.student_discount
+    const query = `INSERT INTO cafeer (name, price, size, wifi, music, student_discount, lat, lng) VALUES ("${name}", ${price}, ${size}, ${wifi}, ${student_discount}, 1, 1)`;
+    connection.query(query, (error, results) => {
+        res.send(results);
 });
+});
+
+
+app.listen(port, () => {
+    console.log(`Application is now running on port ${port}`);
+})
