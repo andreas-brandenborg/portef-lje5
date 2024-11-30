@@ -37,17 +37,23 @@ app.post('/newUser', (req, res) => {
 });
 
 //localhost:3000/newCafe
+
 app.post('/newCafe', (req, res) => {
     const name = req.body.name
     const price = req.body.price
     const size = req.body.size
     const wifi = req.body.wifi
+    const lat = req.body.lat
+    const lng = req.body.lng
+
     const student_discount = req.body.student_discount
-    const query = `INSERT INTO cafeer (name, price, size, wifi, music, student_discount, lat, lng) VALUES ("${name}", ${price}, ${size}, ${wifi}, ${student_discount}, 1, 1)`;
+    const query = `INSERT INTO cafeer (name, price, size, wifi, music, student_discount, lat, lng) VALUES ("${name}", ${price}, ${size}, ${wifi}, ${student_discount}, ${lat} , ${lng})`;
     connection.query(query, (error, results) => {
         res.send(results);
 });
 });
+
+
 
 
 app.listen(port, () => {
