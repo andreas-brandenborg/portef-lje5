@@ -1,4 +1,4 @@
-const testElement = document.querySelector("#test")
+
 const createUserElement = document.querySelector("#createU")
 const createEmailElement = document.querySelector("#uName")
 const createPasswordElement = document.querySelector("#passW")
