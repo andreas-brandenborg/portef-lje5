@@ -122,12 +122,14 @@ createUserElement.addEventListener("click", () => {
         })
     })
             .then(response => response.json())
+            .then(data => {
+                console.log("User created successfully:", data);
+                alert("User created successfully!");
+            })
             .catch(error => {
                 console.error("Error:", error);
                 alert("Failed to create user. Please try again.");
             })
-
-
 })
 
 
