@@ -56,7 +56,6 @@ app.post('/newCafe', (req, res) => {
 });
 
 
-
 app.listen(port, () => {
     console.log(`Application is now running on port ${port}`);
 })

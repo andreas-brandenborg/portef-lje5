@@ -5,6 +5,8 @@ const selectCafeMusic = document.querySelector("#cafeMusic")
 const selectCafeWifi = document.querySelector("#cafeWifi")
 const selectCafeDiscount = document.querySelector("#cafeDiscountCreate")
 const selectCreateCafe = document.querySelector("#createCafé")
+const latElement = document.querySelector("#lat")
+const lngElement = document.querySelector("#lng")
 
 
 selectCreateCafe.addEventListener("click", () => {
@@ -15,9 +17,12 @@ selectCreateCafe.addEventListener("click", () => {
     const cafeWifi = selectCafeWifi.value
     const cafeMusic = selectCafeMusic.value
     const cafeDiscount = selectCafeDiscount.value
+    const lat = latElement.value
+    const lng = lngElement.value
+
 
     fetch(`http://localhost:3000/newCafe`, {
-        method: "post",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
@@ -30,15 +35,20 @@ selectCreateCafe.addEventListener("click", () => {
             student_discount: cafeDiscount
         })
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // Ensure the response has JSON
+        })
         .then(data => {
             console.log("Cafe created successfully:", data);
-            alert("Cafe created successfully!");
+            alert(data.message || "Cafe created successfully!");
         })
         .catch(error => {
             console.error("Error:", error);
             alert("Failed to create cafe. Please try again.");
-        })
-})
+        });})
+
 
 
