@@ -1,6 +1,7 @@
 const selectCafeName = document.querySelector("#cafeName")
 const selectCafePrice = document.querySelector("#pris")
 const selectCafeSize = document.querySelector("#cafeStørrelse")
+const selectCafeMusic = document.querySelector("#cafeMusic")
 const selectCafeWifi = document.querySelector("#cafeWifi")
 const selectCafeDiscount = document.querySelector("#cafeDiscountCreate")
 const selectCreateCafe = document.querySelector("#createCafé")
@@ -12,6 +13,7 @@ selectCreateCafe.addEventListener("click", () => {
     const cafePrice = selectCafePrice.value
     const cafeSize = selectCafeSize.value
     const cafeWifi = selectCafeWifi.value
+    const cafeMusic = selectCafeMusic.value
     const cafeDiscount = selectCafeDiscount.value
 
     fetch(`http://localhost:3000/newCafe`, {
@@ -23,6 +25,7 @@ selectCreateCafe.addEventListener("click", () => {
             name: cafeName,
             price: cafePrice,
             size: cafeSize,
+            music: cafeMusic,
             wifi: cafeWifi,
             student_discount: cafeDiscount
         })

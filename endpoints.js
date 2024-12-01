@@ -38,16 +38,23 @@ app.post('/newUser', (req, res) => {
 
 //localhost:3000/newCafe
 app.post('/newCafe', (req, res) => {
-    const name = req.body.name
-    const price = req.body.price
-    const size = req.body.size
-    const wifi = req.body.wifi
-    const student_discount = req.body.student_discount
-    const query = `INSERT INTO cafeer (name, price, size, wifi, music, student_discount, lat, lng) VALUES ("${name}", ${price}, ${size}, ${wifi}, ${student_discount}, 1, 1)`;
+    const name = req.body.name;
+    const price = req.body.price;
+    const size = req.body.size;
+    const music = req.body.music
+    const wifi = req.body.wifi;
+    const student_discount = req.body.student_discount;
+    const query = `INSERT INTO cafeer (name, price, size, music, wifi, student_discount, lat, lng) VALUES ("${name}", ${price}, ${size}, ${music}, ${wifi}, ${student_discount}, 1, 1)`;
+
     connection.query(query, (error, results) => {
-        res.send(results);
+        if (error) {
+            res.status(500).json({ error: 'Database error', details: error });
+        } else {
+            res.status(201).json({ message: 'Cafe created successfully', results });
+        }
+    });
 });
-});
+
 
 
 app.listen(port, () => {
